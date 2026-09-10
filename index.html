@@ -1,1 +1,519 @@
+```html
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Premium Auto Detailing</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b0b0b;
+            color: white;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #111;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #222;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #00c853;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #00c853;
+        }
+
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+
+            background:
+                linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.8)),
+                url("https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #00c853;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #ddd;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #00c853;
+            color: #000;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .button:hover {
+            background: #00a844;
+        }
+
+        .button-dark {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .button-dark:hover {
+            background: white;
+            color: black;
+        }
+
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #aaa;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: #151515;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #252525;
+            text-align: center;
+        }
+
+        .card h3 {
+            color: #00c853;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .card p {
+            color: #bbb;
+            margin-bottom: 20px;
+        }
+
+        .price {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .reviews {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .review {
+            background: #151515;
+            padding: 25px;
+            border-radius: 12px;
+        }
+
+        .review p {
+            color: #ccc;
+            margin-bottom: 15px;
+        }
+
+        .stars {
+            color: #ffd000;
+        }
+
+        .contact {
+            text-align: center;
+            background: #111;
+        }
+
+        .contact-info {
+            font-size: 19px;
+            margin: 20px 0;
+        }
+
+        .contact-info p {
+            margin: 10px;
+        }
+
+        footer {
+            background: #050505;
+            text-align: center;
+            padding: 25px;
+            color: #777;
+        }
+
+        .whatsapp {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background: #25D366;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+        }
+
+        @media (max-width: 800px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .services,
+            .gallery,
+            .reviews {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        PREMIUM <span>DETAILING</span>
+    </div>
+
+    <nav>
+        <a href="#servicii">Servicii</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#recenzii">Recenzii</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+</header>
+
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+            Mașina ta merită
+            <span>mai mult.</span>
+        </h1>
+
+        <p>
+            Detailing auto premium pentru un interior impecabil
+            și un exterior care atrage priviri.
+        </p>
+
+        <a class="button" href="#contact">
+            Programează-te
+        </a>
+
+        <a class="button button-dark" href="#servicii">
+            Vezi serviciile
+        </a>
+
+    </div>
+
+</section>
+
+
+<section id="servicii">
+
+    <div class="section-title">
+
+        <h2>Serviciile noastre</h2>
+
+        <p>
+            Îngrijire profesională pentru mașina ta
+        </p>
+
+    </div>
+
+
+    <div class="services">
+
+        <div class="card">
+
+            <h3>Detailing Interior</h3>
+
+            <p>
+                Curățare profundă a scaunelor,
+                bordului, mochetelor și tuturor
+                suprafețelor interioare.
+            </p>
+
+            <div class="price">
+                de la 250 lei
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>Detailing Exterior</h3>
+
+            <p>
+                Spălare profesională, decontaminare
+                și finisare pentru un exterior impecabil.
+            </p>
+
+            <div class="price">
+                de la 200 lei
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>Polish Auto</h3>
+
+            <p>
+                Reducerea zgârieturilor și redarea
+                luciului original al vopselei.
+            </p>
+
+            <div class="price">
+                de la 500 lei
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="galerie">
+
+    <div class="section-title">
+
+        <h2>Galerie</h2>
+
+        <p>
+            Câteva exemple de lucrări
+        </p>
+
+    </div>
+
+
+    <div class="gallery">
+
+        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80">
+
+        <img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=900&q=80">
+
+        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=900&q=80">
+
+    </div>
+
+</section>
+
+
+<section id="recenzii">
+
+    <div class="section-title">
+
+        <h2>Ce spun clienții</h2>
+
+        <p>
+            Exemple pentru demonstrație
+        </p>
+
+    </div>
+
+
+    <div class="reviews">
+
+        <div class="review">
+
+            <p>
+                „Mașina arată incredibil. Interiorul
+                pare efectiv nou!”
+            </p>
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+        </div>
+
+
+        <div class="review">
+
+            <p>
+                „Foarte atenți la detalii și foarte
+                profesioniști. Recomand!”
+            </p>
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+        </div>
+
+
+        <div class="review">
+
+            <p>
+                „Servicii excelente și rezultat
+                peste așteptări.”
+            </p>
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="contact" class="contact">
+
+    <div class="section-title">
+
+        <h2>Programează-te</h2>
+
+        <p>
+            Contactează-ne pentru o programare.
+        </p>
+
+    </div>
+
+
+    <div class="contact-info">
+
+        <p>📞 Telefon: 07XX XXX XXX</p>
+
+        <p>📍 Constanța, România</p>
+
+        <p>🕐 Luni - Sâmbătă: 09:00 - 18:00</p>
+
+    </div>
+
+
+    <a class="button" href="tel:07XXXXXXXX">
+        Sună acum
+    </a>
+
+</section>
+
+
+<footer>
+
+    © 2026 Premium Detailing — Toate drepturile rezervate.
+
+</footer>
+
+
+<a
+    class="whatsapp"
+    href="https://wa.me/407XXXXXXXX"
+    target="_blank"
+>
+    WhatsApp
+</a>
+
+
+</body>
+</html>
+```
