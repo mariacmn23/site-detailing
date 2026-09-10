@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Premium Auto Detailing</title>
+    <title id="page-title">Numele firmei</title>
 
     <style>
         * {
@@ -74,11 +74,12 @@
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 850px;
         }
 
         .hero h1 {
             font-size: 55px;
+            line-height: 1.15;
             margin-bottom: 20px;
         }
 
@@ -177,6 +178,11 @@
             height: 250px;
             object-fit: cover;
             border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.03);
         }
 
         .reviews {
@@ -232,6 +238,7 @@
             text-decoration: none;
             font-weight: bold;
             box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+            z-index: 2000;
         }
 
         @media (max-width: 800px) {
@@ -271,9 +278,7 @@
 
 <header>
 
-    <div class="logo">
-        PREMIUM <span>DETAILING</span>
-    </div>
+    <div class="logo" id="logo"></div>
 
     <nav>
         <a href="#servicii">Servicii</a>
@@ -290,14 +295,10 @@
     <div class="hero-content">
 
         <h1>
-            Mașina ta merită
-            <span>mai mult.</span>
+            <span id="hero-title"></span>
         </h1>
 
-        <p>
-            Detailing auto premium pentru un interior impecabil
-            și un exterior care atrage priviri.
-        </p>
+        <p id="hero-description"></p>
 
         <a class="button" href="#contact">
             Programează-te
@@ -318,64 +319,11 @@
 
         <h2>Serviciile noastre</h2>
 
-        <p>
-            Îngrijire profesională pentru mașina ta
-        </p>
+        <p>Profesionalism și atenție la fiecare detaliu.</p>
 
     </div>
 
-
-    <div class="services">
-
-        <div class="card">
-
-            <h3>Detailing Interior</h3>
-
-            <p>
-                Curățare profundă a scaunelor,
-                bordului, mochetelor și tuturor
-                suprafețelor interioare.
-            </p>
-
-            <div class="price">
-                de la 250 lei
-            </div>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>Detailing Exterior</h3>
-
-            <p>
-                Spălare profesională, decontaminare
-                și finisare pentru un exterior impecabil.
-            </p>
-
-            <div class="price">
-                de la 200 lei
-            </div>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>Polish Auto</h3>
-
-            <p>
-                Reducerea zgârieturilor și redarea
-                luciului original al vopselei.
-            </p>
-
-            <div class="price">
-                de la 500 lei
-            </div>
-
-        </div>
-
-    </div>
+    <div class="services" id="services-container"></div>
 
 </section>
 
@@ -386,22 +334,11 @@
 
         <h2>Galerie</h2>
 
-        <p>
-            Câteva exemple de lucrări
-        </p>
+        <p>Câteva exemple de lucrări.</p>
 
     </div>
 
-
-    <div class="gallery">
-
-        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80">
-
-        <img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=900&q=80">
-
-        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=900&q=80">
-
-    </div>
+    <div class="gallery" id="gallery-container"></div>
 
 </section>
 
@@ -412,57 +349,11 @@
 
         <h2>Ce spun clienții</h2>
 
-        <p>
-            Exemple pentru demonstrație
-        </p>
+        <p>Experiențele clienților noștri.</p>
 
     </div>
 
-
-    <div class="reviews">
-
-        <div class="review">
-
-            <p>
-                „Mașina arată incredibil. Interiorul
-                pare efectiv nou!”
-            </p>
-
-            <div class="stars">
-                ★★★★★
-            </div>
-
-        </div>
-
-
-        <div class="review">
-
-            <p>
-                „Foarte atenți la detalii și foarte
-                profesioniști. Recomand!”
-            </p>
-
-            <div class="stars">
-                ★★★★★
-            </div>
-
-        </div>
-
-
-        <div class="review">
-
-            <p>
-                „Servicii excelente și rezultat
-                peste așteptări.”
-            </p>
-
-            <div class="stars">
-                ★★★★★
-            </div>
-
-        </div>
-
-    </div>
+    <div class="reviews" id="reviews-container"></div>
 
 </section>
 
@@ -473,25 +364,21 @@
 
         <h2>Programează-te</h2>
 
-        <p>
-            Contactează-ne pentru o programare.
-        </p>
+        <p>Contactează-ne pentru o programare.</p>
 
     </div>
-
 
     <div class="contact-info">
 
-        <p>📞 Telefon: 07XX XXX XXX</p>
+        <p>📞 Telefon: <span id="phone"></span></p>
 
-        <p>📍 Constanța, România</p>
+        <p>📍 <span id="city"></span></p>
 
-        <p>🕐 Luni - Sâmbătă: 09:00 - 18:00</p>
+        <p>🕐 <span id="hours"></span></p>
 
     </div>
 
-
-    <a class="button" href="tel:07XXXXXXXX">
+    <a class="button" id="call-button">
         Sună acum
     </a>
 
@@ -500,19 +387,240 @@
 
 <footer>
 
-    © 2026 Premium Detailing — Toate drepturile rezervate.
+    © 2026 <span id="footer-name"></span> — Toate drepturile rezervate.
 
 </footer>
 
 
-<a
-    class="whatsapp"
-    href="https://wa.me/407XXXXXXXX"
-    target="_blank"
->
+<a class="whatsapp" id="whatsapp-button" target="_blank">
     WhatsApp
 </a>
 
+
+<script>
+
+    /* ==================================================
+       CONFIGURARE SITE
+       MODIFICĂ DOAR ACEASTĂ ZONĂ PENTRU FIECARE FIRMĂ
+       ================================================== */
+
+    const CONFIG = {
+
+        /* INFORMAȚII FIRMĂ */
+
+        name: "Premium Detailing",
+
+        city: "Constanța, România",
+
+        phone: "07XX XXX XXX",
+
+        phoneLink: "407XXXXXXXX",
+
+        hours: "Luni - Sâmbătă: 09:00 - 18:00",
+
+
+        /* TEXT PRINCIPAL */
+
+        heroTitle: "Mașina ta merită mai mult.",
+
+        heroDescription:
+            "Detailing auto premium pentru un interior impecabil și un exterior care atrage priviri.",
+
+
+        /* POZA PRINCIPALĂ */
+
+        heroImage:
+            "https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1600&q=80",
+
+
+        /* SERVICII */
+
+        services: [
+
+            {
+                name: "Detailing Interior",
+                description:
+                    "Curățare profundă a scaunelor, bordului, mochetelor și tuturor suprafețelor interioare.",
+                price: "de la 250 lei"
+            },
+
+            {
+                name: "Detailing Exterior",
+                description:
+                    "Spălare profesională, decontaminare și finisare pentru un exterior impecabil.",
+                price: "de la 200 lei"
+            },
+
+            {
+                name: "Polish Auto",
+                description:
+                    "Reducerea zgârieturilor și redarea luciului original al vopselei.",
+                price: "de la 500 lei"
+            }
+
+        ],
+
+
+        /* POZE GALERIE */
+
+        gallery: [
+
+            "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80",
+
+            "https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=900&q=80",
+
+            "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=900&q=80"
+
+        ],
+
+
+        /* RECENZII
+           Pentru demo pot rămâne exemple.
+           Pentru un client real folosește doar recenzii reale. */
+
+        reviews: [
+
+            {
+                text: "Mașina arată incredibil. Interiorul pare efectiv nou!",
+                stars: "★★★★★"
+            },
+
+            {
+                text: "Foarte atenți la detalii și foarte profesioniști. Recomand!",
+                stars: "★★★★★"
+            },
+
+            {
+                text: "Servicii excelente și rezultat peste așteptări.",
+                stars: "★★★★★"
+            }
+
+        ]
+
+    };
+
+
+    /* ==================================================
+       NU MODIFICA DE AICI ÎN JOS
+       ================================================== */
+
+
+    document.title = CONFIG.name;
+
+    document.getElementById("logo").innerHTML =
+        CONFIG.name;
+
+    document.getElementById("hero-title").innerHTML =
+        CONFIG.heroTitle;
+
+    document.getElementById("hero-description").innerHTML =
+        CONFIG.heroDescription;
+
+    document.getElementById("phone").textContent =
+        CONFIG.phone;
+
+    document.getElementById("city").textContent =
+        CONFIG.city;
+
+    document.getElementById("hours").textContent =
+        CONFIG.hours;
+
+    document.getElementById("footer-name").textContent =
+        CONFIG.name;
+
+
+    /* POZA HERO */
+
+    document.querySelector(".hero").style.backgroundImage =
+        `linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.8)), url("${CONFIG.heroImage}")`;
+
+
+    /* TELEFON */
+
+    const callButton =
+        document.getElementById("call-button");
+
+    callButton.href =
+        "tel:+" + CONFIG.phoneLink;
+
+
+    /* WHATSAPP */
+
+    const whatsappButton =
+        document.getElementById("whatsapp-button");
+
+    whatsappButton.href =
+        "https://wa.me/" + CONFIG.phoneLink;
+
+
+    /* SERVICII */
+
+    const servicesContainer =
+        document.getElementById("services-container");
+
+    CONFIG.services.forEach(service => {
+
+        servicesContainer.innerHTML += `
+
+            <div class="card">
+
+                <h3>${service.name}</h3>
+
+                <p>${service.description}</p>
+
+                <div class="price">
+                    ${service.price}
+                </div>
+
+            </div>
+
+        `;
+
+    });
+
+
+    /* GALERIE */
+
+    const galleryContainer =
+        document.getElementById("gallery-container");
+
+    CONFIG.gallery.forEach(image => {
+
+        galleryContainer.innerHTML += `
+
+            <img src="${image}" alt="${CONFIG.name}">
+
+        `;
+
+    });
+
+
+    /* RECENZII */
+
+    const reviewsContainer =
+        document.getElementById("reviews-container");
+
+    CONFIG.reviews.forEach(review => {
+
+        reviewsContainer.innerHTML += `
+
+            <div class="review">
+
+                <p>
+                    „${review.text}”
+                </p>
+
+                <div class="stars">
+                    ${review.stars}
+                </div>
+
+            </div>
+
+        `;
+
+    });
+
+</script>
 
 </body>
 </html>
